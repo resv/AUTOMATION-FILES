@@ -327,7 +327,7 @@ NF2PasteVariablesFromSummary()
 ---------------------------------------------------------------------------------------------------------------------
 	;NAVIGATES TO INCIDENT AND COPIES VALUES FROM INCIDENT PAGE DOL/ TIME
 
-<!4::
+
 	SA#CopyValuesFromIncident()
 			{
       ;FOCUS INCIDENT WINDOW

@@ -52,10 +52,11 @@ return
 ----------------------------------------------------------------------------------------------------------------------
 ;UPLOAD SCRIPTS
 
+;NF 2 UPLOAD
 <!1::
 Send {Home}
 Sleep 300
-MouseMove, 1902, 1019
+MouseMove, 1902, 1018
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
@@ -96,22 +97,113 @@ Send, NF2
 Send, {TAB}
 Send, {ENTER}
 Sleep 500
-MouseMove, 305, 411
+MouseMove, 370, 400
 Send {Rbutton down}
 Sleep 50
 Send {Rbutton up}
 Sleep 500
-MouseMove, 375, 551
+MouseMove, 428, 546
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+RETURN
+
+;Billing
+<!2::
+global BillingProvider := ""
+send, ^c
+ClipWait
+global BillingProvider := clipboard
+Send {Home}
+Sleep 300
+MouseMove, 1902, 1018
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+MouseMove, 37, 370
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 2000
+MouseMove, 434, 257
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 1158, 529
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1500
+Send, +{TAB 2}
+Sleep 500
+Send {End}
+Sleep 500
+Send {Home}
+Sleep 500
+Send, {Enter}
+Sleep, 3000
+;FILLING OUT PROPERTIES
+Send, {TAB 4}
+Send, {SPACE}
+Send, {TAB 4}
+Send, Billing
+Send, {TAB}
+Send, {TAB 2}
+Send, {SPACE}
+Send, {TAB 2}
+Send, {SPACE}
+Send, {TAB 8}
+Send, BILLING - %BillingProvider%
+Send, {TAB}
+Send, {ENTER}
+Sleep 2000
+MouseMove, 350, 400
+Send {Rbutton down}
+Sleep 500
+Send {Rbutton up}
+Sleep 800
+MouseMove, 500, 550
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+MouseMove, 106, 1019
+Sleep 2500
+Send {Lbutton down}
+Sleep 500
+Send {Lbutton up}
+Sleep 500
+Send {PgDn}
+Sleep 500
+Send {PgDn}
+Sleep 500
+Send {PgDn}
+Sleep 500
+Send ^w
+MouseMove, 1902, 1018
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 500
 
+<!v::
+Secs := 20
+SetTimer, CountDown, 1000
+MsgBox, 1, System Shutdown, Allow Auto Shutdown in %Secs%?, %Secs%
+SetTimer, CountDown, Off
+/*
+IfMsgBox Ok
+  Shutdown, 8
+*/
+Return
 
-
-RETURN
-
-
+CountDown:
+Secs -= 1
+ControlSetText,Static1,Allow Auto Shutdown in %Secs%?,System Shutdown ahk_class #32770
+Return
 
 ;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time. PAUSE VIA ESCAPE KEY IS INFERIOR
 
