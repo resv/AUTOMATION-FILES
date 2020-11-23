@@ -2,11 +2,11 @@
 #InstallKeybdHook
 #InstallMouseHook
 
-;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time. PAUSE VIA ESCAPE KEY IS INFERIOR
+;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time.
 
 ;Esc::ExitApp  ; Exit script with Escape key, currently commented out and using pause for easy editing
-Esc::Pause    ; Pause script with Ctrl+Alt+P
-!r::Reload   ; Reload script with Ctrl+Alt+R
+Esc::Pause    ; Pause script with Alt+ESC
+!r::Reload   ; Reload script with Alt+R
 
 ;VOLUME UP WILL SCROLL WINDOW DOWN
 Volume_Up::
@@ -210,9 +210,3 @@ CountDown:
 Secs -= 1
 ControlSetText,Static1,Allow Auto Shutdown in %Secs%?,System Shutdown ahk_class #32770
 Return
-
-;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time. PAUSE VIA ESCAPE KEY IS INFERIOR
-
-;Esc::ExitApp  ; Exit script with Escape key, currently commented out and using pause for easy editing
-Esc::Pause    ; Pause script with Ctrl+Alt+P
-!r::Reload   ; Reload script with Ctrl+Alt+R
