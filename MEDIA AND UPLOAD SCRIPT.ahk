@@ -2,6 +2,12 @@
 #InstallKeybdHook
 #InstallMouseHook
 
+;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time. PAUSE VIA ESCAPE KEY IS INFERIOR
+
+;Esc::ExitApp  ; Exit script with Escape key, currently commented out and using pause for easy editing
+Esc::Pause    ; Pause script with Ctrl+Alt+P
+!r::Reload   ; Reload script with Ctrl+Alt+R
+
 ;VOLUME UP WILL SCROLL WINDOW DOWN
 Volume_Up::
 Send {WheelDown}
