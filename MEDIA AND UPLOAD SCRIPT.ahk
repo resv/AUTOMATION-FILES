@@ -117,7 +117,6 @@ RETURN
 
 ;Billing
 <!2::
-global BillingProvider := ""
 send, ^c
 ClipWait
 global BillingProvider := clipboard
