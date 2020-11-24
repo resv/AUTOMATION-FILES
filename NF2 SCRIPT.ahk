@@ -367,19 +367,42 @@ NF2PasteVariablesFromSummary()
 			CLIPPED := clipboard
 			global ClientTOA := CLIPPED
 
-
 			MsgBox, 262160, %TITLE%, `n INCIDENT PAGE VALUES `n VALUES: `n On clipboard now: %CLIPPED% `n ClientDOL: %ClientDOL% `n ClientTOA: %ClientTOA%
+			}
 
-			;CLOSES INCIDENT Window
-			Send, ^w
-			Send, {ENTER}
+			;Goes back a page using Back in chrome (this should be replaced with next list tab )
+			SA#GoBackAPage()
+			{
+			MouseMove, 97, 1303
+			Send {Lbutton down}
+			Sleep 300
+			Send {Lbutton up}
+			Sleep 1000
+			Send, !{LEFT}
+			Sleep 2500
+			return
+			}
 
-					return
-
+			SA#GoBackToSummary()
+			{
+			MouseMove, 93, 216
+			Send {Lbutton down}
+			Sleep 300
+			Send {Lbutton up}
+			Sleep 2500
+			return
 			}
 
 
 
+;Goes TO MEDICAL FACILITY (this should be replaced with next list tab )
+			^\::
+			MouseMove, 93, 216
+			Send {Lbutton down}
+			Sleep 300
+			Send {Lbutton up}
+			Sleep 2500
+			return
 
 
 

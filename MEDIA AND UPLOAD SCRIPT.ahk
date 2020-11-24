@@ -71,12 +71,12 @@ MouseMove, 37, 370
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
-Sleep 500
+Sleep 2000
 MouseMove, 434, 257
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
-Sleep 500
+Sleep 1000
 MouseMove, 1158, 529
 Send {Lbutton down}
 Sleep 50
@@ -84,8 +84,10 @@ Send {Lbutton up}
 Sleep 1500
 Send, +{TAB 2}
 Sleep 500
+Send {End}
+Sleep 500
 Send {Home}
-Sleep 100
+Sleep 500
 Send, {Enter}
 Sleep, 3000
 ;FILLING OUT PROPERTIES
@@ -102,18 +104,36 @@ Send, {TAB 8}
 Send, NF2
 Send, {TAB}
 Send, {ENTER}
-Sleep 500
-MouseMove, 370, 400
+Sleep 2000
+MouseMove, 350, 400
 Send {Rbutton down}
-Sleep 50
-Send {Rbutton up}
 Sleep 500
-MouseMove, 428, 546
+Send {Rbutton up}
+Sleep 800
+MouseMove, 500, 550
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 500
-RETURN
+MouseMove, 106, 1019
+Sleep 2500
+Send {Lbutton down}
+Sleep 500
+Send {Lbutton up}
+Sleep 2000
+Send {PgDn}
+Sleep 500
+Send {PgDn}
+Sleep 500
+Send {PgDn}
+Sleep 500
+Send ^w
+MouseMove, 1902, 1018
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+return
 
 ;Billing
 <!2::
@@ -193,6 +213,7 @@ Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 500
+
 
 <!v::
 Secs := 20
