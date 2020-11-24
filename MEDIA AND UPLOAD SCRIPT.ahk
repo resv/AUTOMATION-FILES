@@ -120,7 +120,7 @@ Sleep 2500
 Send {Lbutton down}
 Sleep 500
 Send {Lbutton up}
-Sleep 2000
+Sleep 5000
 Send {PgDn}
 Sleep 500
 Send {PgDn}
