@@ -182,9 +182,11 @@ Send, {TAB 2}
 Send, {SPACE}
 Send, {TAB 8}
 Send, BILLING - %BillingProvider%
+Sleep 100
 Send, {TAB}
+Sleep 1000
 Send, {ENTER}
-Sleep 2000
+Sleep 3000
 MouseMove, 350, 400
 Send {Rbutton down}
 Sleep 500
