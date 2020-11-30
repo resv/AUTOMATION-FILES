@@ -218,9 +218,9 @@ Sleep 500
 
 
 <!v::
-Secs := 20
+Secs := 5
 SetTimer, CountDown, 1000
-MsgBox, 1, System Shutdown, Allow Auto Shutdown in %Secs%?, %Secs%
+MsgBox, 1, System Shutdown, Upload Complete `nThis message will close in %Secs%, %Secs%
 SetTimer, CountDown, Off
 /*
 IfMsgBox Ok
