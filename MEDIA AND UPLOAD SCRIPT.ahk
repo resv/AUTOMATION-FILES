@@ -232,3 +232,26 @@ CountDown:
 Secs -= 1
 ControlSetText,Static1,Allow Auto Shutdown in %Secs%?,System Shutdown ahk_class #32770
 Return
+
+;UPDATE NOTES NF2
+<!4::
+Send {Home}
+MouseMove, 81, 222
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 300
+MouseMove, 207, 187
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+Send, {TAB 4}
+Send, A
+Sleep 300
+Send, {ENTER}
+Sleep 300
+Send, {TAB 7}
+Send, Date(AK) `nSent out NF2
+Send, {TAB 2}
+Send, {Enter}
