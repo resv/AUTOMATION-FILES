@@ -186,7 +186,7 @@ Sleep 100
 Send, {TAB}
 Sleep 1000
 Send, {ENTER}
-Sleep 3000
+Sleep 1500
 MouseMove, 350, 400
 Send {Rbutton down}
 Sleep 500
@@ -202,7 +202,7 @@ Sleep 2500
 Send {Lbutton down}
 Sleep 500
 Send {Lbutton up}
-Sleep 500
+Sleep 1000
 Send {PgDn}
 Sleep 500
 Send {PgDn}
