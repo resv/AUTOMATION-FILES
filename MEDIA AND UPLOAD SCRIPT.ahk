@@ -189,16 +189,16 @@ Send, {ENTER}
 Sleep 1500
 MouseMove, 350, 400
 Send {Rbutton down}
-Sleep 500
+Sleep 300
 Send {Rbutton up}
-Sleep 800
+Sleep 500
 MouseMove, 500, 550
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 500
 MouseMove, 106, 1019
-Sleep 2500
+Sleep 2000
 Send {Lbutton down}
 Sleep 500
 Send {Lbutton up}
@@ -218,7 +218,7 @@ Sleep 500
 
 
 <!v::
-Secs := 5
+Secs := 3
 SetTimer, CountDown, 1000
 MsgBox, 1, System Shutdown, Upload Complete `nThis message will close in %Secs%, %Secs%
 SetTimer, CountDown, Off
@@ -230,7 +230,7 @@ Return
 
 CountDown:
 Secs -= 1
-ControlSetText,Static1,Allow Auto Shutdown in %Secs%?,System Shutdown ahk_class #32770
+ControlSetText,Static1,Allow Auto Shutdown in %Secs%,System Shutdown ahk_class #32770
 Return
 
 ;UPDATE NOTES NF2
@@ -240,15 +240,15 @@ MouseMove, 81, 222
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
-Sleep 300
+Sleep 2000
 MouseMove, 207, 187
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
-Sleep 500
-Send, {TAB 4}
+Sleep 1000
+Send, {TAB 3}
 Send, A
-Sleep 300
+Sleep 200
 Send, {ENTER}
 Sleep 300
 Send, {TAB 7}
