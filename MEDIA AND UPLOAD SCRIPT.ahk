@@ -5,13 +5,25 @@
 global DATE = %A_MM%/%A_DD%/%A_YYYY%
 
 FormatTime, CurrentDateTime,, MM/dd/yy
-
+ToggleBold := ^b
+ToggleUnderline := ^u
 
 ;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time.
 
 ;Esc::ExitApp  ; Exit script with Escape key, currently commented out and using pause for easy editing
 Esc::Pause    ; Pause script with Alt+ESC
 !r::Reload   ; Reload script with Alt+R
+
+-----------------------------
+;FOCUS SA NOTES
+FocusSANotes()
+	{
+		WinActivate, Case Summary,,,
+		Sleep 300
+		return
+	}
+----------------------------
+
 
 ;VOLUME UP WILL SCROLL WINDOW DOWN
 Volume_Up::
@@ -337,6 +349,7 @@ Return
 ;--------------------------------------------------------------------------------------------------------------------
 ;UPDATE NOTES NF2
 <!4::
+FocusSANotes()
 Send {Home}
 MouseMove, 81, 222
 Send {Lbutton down}
@@ -373,8 +386,22 @@ Send {Lbutton down}
 Sleep 100
 Send {Lbutton up}
 Sleep 1000
-Send, NF`n`n
+Send, %ToggleBold%
+Send, %ToggleUnderline%
+Send, NF
+Send, %ToggleBold%
+Send, %ToggleUnderline%
+Send, `n`n
+SendInput, %ToggleBold%
+Send, %ToggleUnderline%
 Send, %CurrentDateTime%(AK)`nSent out NF2
+Send, `n`n
+Send, %ToggleBold%
+Send, %ToggleUnderline%
+Send, BILLING
+Send, %ToggleBold%
+Send, %ToggleUnderline%
+Send, `n`n
 Send, {TAB 2}
 Send, {Enter}
 Return
@@ -382,5 +409,5 @@ Return
 ;--------------------------------------------------------------------------------------------------------------------
 ;tester
 <!5::
-
+FocusSANotes()
 RETURN
