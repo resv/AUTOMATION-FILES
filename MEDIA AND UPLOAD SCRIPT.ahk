@@ -4,6 +4,9 @@
 
 global DATE = %A_MM%/%A_DD%/%A_YYYY%
 
+FormatTime, CurrentDateTime,, MM/dd/yy
+
+
 ;EMERGENCY STOP SCRIPTS, L-ALT + R is the best way to stop script and refresh it at the same time.
 
 ;Esc::ExitApp  ; Exit script with Escape key, currently commented out and using pause for easy editing
@@ -351,6 +354,57 @@ Sleep 200
 Send, {ENTER}
 Sleep 300
 Send, {TAB 7}
-Send, %Date%(AK) `nSent out NF2
+Send, %CurrentDateTime%(AK)`nSent out NF2
 Send, {TAB 2}
 Send, {Enter}
+return
+
+;--------------------------------------------------------------------------------------------------------------------
+;UPDATE NOTES NF2 with TITLE
+<!5::
+Send {Home}
+MouseMove, 81, 222
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 2000
+MouseMove, 207, 187
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 516, 306
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 580, 326
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 991, 346
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 972, 475
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 867, 392
+Send {Lbutton down}
+Sleep 100
+Send {Lbutton up}
+Sleep 1000
+MouseMove, 570, 511
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 1000
+Send, NF`n`n
+Send, %CurrentDateTime%(AK)`nSent out NF2
+Send, {TAB 2}
+Send, {Enter}
+Return
