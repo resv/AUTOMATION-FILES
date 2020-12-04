@@ -237,7 +237,7 @@ Sleep 500
 <!v::
 Secs := 3
 SetTimer, CountDown, 1000
-MsgBox, 1, System Shutdown, Upload Complete `nThis message will close in %Secs%, %Secs%
+MsgBox, 1, System Shutdown, COMPLETE `n`n This message will close in %Secs%, %Secs%
 SetTimer, CountDown, Off
 /*
 IfMsgBox Ok
@@ -247,7 +247,7 @@ Return
 
 CountDown:
 Secs -= 1
-ControlSetText,Static1,Allow Auto Shutdown in %Secs%,System Shutdown ahk_class #32770
+ControlSetText,Static1,`n `nThis message will close in %Secs%, System Shutdown ahk_class #32770
 Return
 
 ;-----------------------------------------------------------------------------------------------------------------
