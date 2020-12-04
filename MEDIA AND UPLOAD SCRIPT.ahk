@@ -348,31 +348,6 @@ Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 1000
-Send, {TAB 3}
-Send, A
-Sleep 200
-Send, {ENTER}
-Sleep 300
-Send, {TAB 7}
-Send, %CurrentDateTime%(AK)`nSent out NF2
-Send, {TAB 2}
-Send, {Enter}
-return
-
-;--------------------------------------------------------------------------------------------------------------------
-;UPDATE NOTES NF2 with TITLE
-<!5::
-Send {Home}
-MouseMove, 81, 222
-Send {Lbutton down}
-Sleep 50
-Send {Lbutton up}
-Sleep 2000
-MouseMove, 207, 187
-Send {Lbutton down}
-Sleep 50
-Send {Lbutton up}
-Sleep 1000
 MouseMove, 516, 306
 Send {Lbutton down}
 Sleep 50
@@ -398,13 +373,14 @@ Send {Lbutton down}
 Sleep 100
 Send {Lbutton up}
 Sleep 1000
-MouseMove, 570, 511
-Send {Lbutton down}
-Sleep 50
-Send {Lbutton up}
-Sleep 1000
 Send, NF`n`n
 Send, %CurrentDateTime%(AK)`nSent out NF2
 Send, {TAB 2}
 Send, {Enter}
 Return
+
+;--------------------------------------------------------------------------------------------------------------------
+;tester
+<!5::
+
+RETURN
