@@ -347,9 +347,10 @@ Return
 
 
 ;--------------------------------------------------------------------------------------------------------------------
-;UPDATE NOTES NF2
-<!4::
-FocusSANotes()
+
+;Nav to Summary, add note, then sort to adjuster type.
+addNote()
+{
 Send {Home}
 MouseMove, 81, 222
 Send {Lbutton down}
@@ -361,16 +362,33 @@ Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 1000
-MouseMove, 516, 306
+return
+}
+
+;initial note settings
+revUpNotes()
+{
+Send, {Tab 3}
+sleep 500
+Send, a
+Sleep 500
+Send, {Tab 7}
+sleep 500
+}
+
+;Click inside text textbox
+clickTextBox()
+{
+MouseMove, 972, 475
 Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 1000
-MouseMove, 580, 326
-Send {Lbutton down}
-Sleep 50
-Send {Lbutton up}
-Sleep 1000
+}
+
+;Increase Font
+increaseFont()
+{
 MouseMove, 991, 346
 Send {Lbutton down}
 Sleep 50
@@ -381,33 +399,66 @@ Send {Lbutton down}
 Sleep 50
 Send {Lbutton up}
 Sleep 1000
-MouseMove, 867, 392
+return
+}
+
+;decrease increase Font
+decreaseFont()
+{
+MouseMove, 991, 346
 Send {Lbutton down}
-Sleep 100
+Sleep 50
 Send {Lbutton up}
-Sleep 1000
-Send, %ToggleBold%
-Send, %ToggleUnderline%
-Send, NF
-Send, %ToggleBold%
-Send, %ToggleUnderline%
-Send, `n`n
-SendInput, %ToggleBold%
-Send, %ToggleUnderline%
-Send, %CurrentDateTime%(AK)`nSent out NF2
-Send, `n`n
-Send, %ToggleBold%
-Send, %ToggleUnderline%
-Send, BILLING
-Send, %ToggleBold%
-Send, %ToggleUnderline%
-Send, `n`n
-Send, {TAB 2}
-Send, {Enter}
+Sleep 500
+MouseMove, 974, 389
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+return
+}
+
+;Goes to HTML TAB and clicks text textbox
+goToHtmlTab()
+{
+MouseMove, 578, 790
+Sleep 50
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+MouseMove, 836, 367
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+return
+}
+
+;Save NOTES
+saveNote()
+{
+MouseMove, 1093, 868
+Send {Lbutton down}
+Sleep 50
+Send {Lbutton up}
+Sleep 500
+return
+}
+
+;UPDATE NOTES NF2
+<!4::
+FocusSANotes()
+addNote()
+;increaseFont()
+revUpNotes()
+goToHtmlTab()
+Send, <span style="font-size: 18pt;">NF</span><br /><br />%A_MM%/%A_DD%/%A_YYYY%(AK)<br />Sent out NF2<br /><br /><span style="font-size: 18pt;">BILLING</span><br /><br />
+saveNote()
 Return
 
 ;--------------------------------------------------------------------------------------------------------------------
 ;tester
 <!5::
-FocusSANotes()
+clickTextBox()
 RETURN
