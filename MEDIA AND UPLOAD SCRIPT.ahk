@@ -457,6 +457,18 @@ Send, <span style="font-size: 18pt;">NF</span><br /><br />%A_MM%/%A_DD%/%A_YYYY%
 saveNote()
 Return
 
+;INPUT TODAY's DATE NO PARENTHESIS
+<!`::
+Send, %A_MM%/%A_DD%/%A_YYYY%
+Return
+
+;INPUT TODAY's DATE WITH PARENTHESIS AND INITIALS
+<`::
+initials := "(AK) - "
+Send, %A_MM%/%A_DD%/%A_YYYY% %initials%
+Return
+
+
 ;--------------------------------------------------------------------------------------------------------------------
 ;tester
 <!5::
