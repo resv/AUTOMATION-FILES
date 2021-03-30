@@ -464,10 +464,21 @@ Return
 
 ;INPUT TODAY's DATE WITH PARENTHESIS AND INITIALS
 <`::
-initials := "(AK) - "
-Send, %A_MM%/%A_DD%/%A_YYYY% %initials%
+Send, {Enter 2}
+initials := "(AK)"
+Send, %A_MM%/%A_DD%/%A_YYYY%%initials%
+Send, {Enter}
 Return
 
+;INPUT TODAY's DATE WITH NF TREATMENT
+^`::
+initials := "(AK)"
+
+Send, {ENTER 2}
+Send, %A_MM%/%A_DD%/%A_YYYY%%initials%
+Send, {ENTER}
+Send, NF Treatment {space}
+Return
 
 ;--------------------------------------------------------------------------------------------------------------------
 ;tester
